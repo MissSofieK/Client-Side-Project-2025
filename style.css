@@ -1,0 +1,399 @@
+/* 1. Root variables and base setup */
+
+:root {
+    --color-bg: #050816;
+    --color-surface: #101827;
+    --color-accent: #f97316;
+    --color-accent-soft: rgba(249, 115, 22, 0.1);
+    --color-text-main: #f9fafb;
+    --color-text-muted: #9ca3af;
+
+    --font-main: system-ui, -apple-system, BlinkMacSystemFont,
+                 "Segoe UI", sans-serif;
+    --font-heading: "Segoe UI", system-ui, sans-serif;
+
+    --radius-lg: 1.25rem;
+    --radius-img: 1rem;
+    --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.45);
+
+    --content-width: 960px;
+}
+
+/* Light theme overrides */
+body.light-theme {
+    --color-bg: #f3f4f6;
+    --color-surface: #ffffff;
+    --color-text-main: #111827;
+    --color-text-muted: #4b5563;
+}
+
+/* Reset & box model */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+/* 2. Page layout */
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #1f2937 0, #020617 55%);
+    color: var(--color-text-main);
+    font-family: var(--font-main);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    padding: 3rem 0;
+}
+
+body.light-theme {
+    background: var(--color-bg);
+}
+
+.wrapper {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding-inline: 2.5rem;
+}
+
+/* Header and footer */
+
+.site-header {
+    padding: 2.5rem 0 1.5rem;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.header-text {
+    flex: 1 1 auto;
+}
+
+.site-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 3vw, 2.8rem);
+    letter-spacing: 0.02em;
+}
+
+.site-tagline {
+    margin-top: 0.75rem;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+}
+
+.theme-toggle {
+    flex: 0 0 auto;
+    padding: 0.6rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    background: rgba(15, 23, 42, 0.9);
+    color: var(--color-text-main);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+body.light-theme .theme-toggle {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+.site-main {
+    padding: 1rem 0 4rem;
+}
+
+.site-footer {
+    padding: 2rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* 3. Story card */
+
+.story-card {
+    background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.98),
+        rgba(15, 23, 42, 0.9)
+    );
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: 2.5rem 3rem;
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    position: relative;
+    overflow: hidden;
+    margin-top: 2rem;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+body.light-theme .story-card {
+    background: var(--color-surface);
+}
+
+/* accent glow */
+.story-card::before {
+    content: "";
+    position: absolute;
+    inset-block: 10%;
+    inset-inline-start: -50px;
+    width: 100px;
+    background: radial-gradient(
+        circle,
+        var(--color-accent-soft),
+        transparent 70%
+    );
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+.story-card > * {
+    position: relative;
+}
+
+/* 4. Typography */
+
+.story-header {
+    margin-bottom: 2rem;
+}
+
+.story-header h2 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    margin-bottom: 0.35rem;
+}
+
+.story-intro {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* 5. Flex sections and order
+   Title = order 1
+   Paragraph block = order 2
+   Image = order 3
+   Dismiss button = order 4 */
+
+.story-section {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* section titles always at the top on their own line */
+.story-section > h2,
+.story-section > h3 {
+    display: block;
+    width: 100%;
+    order: 0;
+    align-self: flex-start;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--color-accent);
+}
+
+.story-text {
+    order: 2;
+}
+
+.story-text p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.story-image {
+    order: 3;
+    margin: 0.75rem 0 1.5rem;
+    text-align: center;
+}
+
+/* 6. Images with rounded corners */
+
+.story-image img {
+    width: 100%;
+    max-width: 700px;
+    border-radius: var(--radius-img);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    display: inline-block;
+}
+
+/* 7. Dismiss button styling (order 4, underneath section) */
+
+.dismiss-btn {
+    order: 4;
+    align-self: flex-end;
+    background: var(--color-accent);
+    color: #fff;
+    border: none;
+    padding: 0.4rem 0.9rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.dismiss-btn:hover {
+    background: #fb923c;
+    transform: translateY(-1px);
+}
+
+/* Smooth fade-out when section is being removed */
+.story-section.fade-out {
+    opacity: 0;
+    transform: scale(0.97);
+}
+
+/* Bandits span bold */
+
+.bandits-name {
+    font-weight: 700;
+}
+
+/* 8. Ending emphasis */
+
+.story-ending {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px dashed rgba(148, 163, 184, 0.35);
+}
+
+.story-signoff {
+    margin-top: 1rem;
+    font-style: italic;
+    color: var(--color-text-muted);
+    text-align: center;
+}
+
+/* 9. Extra-large desktop
+   Screens wider than 1920px in landscape */
+
+@media (min-width: 1920px) and (orientation: landscape) {
+    :root {
+        --content-width: 1200px;
+    }
+
+    body {
+        padding: 4rem 0;
+        font-size: 1.02rem;
+    }
+
+    .site-title {
+        font-size: 3rem;
+    }
+
+    .story-card {
+        padding: 3rem 3.5rem;
+    }
+
+    .story-section > h2,
+    .story-section > h3 {
+        font-size: 1.6rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .story-text p {
+        font-size: 1.05rem;
+    }
+}
+
+/* 10. Tablet layout
+   Up to 1000px (portrait or landscape) */
+
+@media (max-width: 1000px) {
+    body {
+        padding: 2.25rem 0;
+    }
+
+    .wrapper {
+        padding-inline: 1.75rem;
+    }
+
+    .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .theme-toggle {
+        align-self: flex-start;
+    }
+
+    .story-card {
+        padding: 2rem 1.75rem;
+    }
+
+    .story-section {
+        gap: 0.6rem;
+    }
+}
+
+/* 11. Mobile layout
+   Up to 700px width */
+
+@media (max-width: 700px) {
+    body {
+        padding: 1.5rem 0;
+    }
+
+    .wrapper {
+        padding-inline: 1.25rem;
+    }
+
+    .site-header {
+        padding-top: 1.75rem;
+    }
+
+    .site-title {
+        font-size: 2rem;
+    }
+
+    .story-card {
+        padding: 1.6rem 1.3rem;
+    }
+
+    .story-section {
+        gap: 0.5rem;
+    }
+
+    .story-image img {
+        max-width: 100%;
+    }
+}
