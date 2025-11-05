@@ -115,6 +115,26 @@ body.light-theme {
     font-size: 1rem;
 }
 
+/* Flex container for random funny comments */
+.bandit-comments {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.bandit-comment {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    background: rgba(15, 23, 42, 0.7);
+}
+
+body.light-theme .bandit-comment {
+    background: rgba(209, 213, 219, 0.8);
+}
+
 .theme-toggle {
     flex: 0 0 auto;
     padding: 0.6rem 1.1rem;
@@ -218,11 +238,7 @@ body.light-theme .story-card {
     margin: 0 auto;
 }
 
-/* 5. Flex sections and order
-   Title = order 1
-   Paragraph block = order 2
-   Image = order 3
-   Dismiss button (added by JS) = order 4 */
+/* 5. Flex sections and order */
 
 .story-section {
     display: flex;
@@ -235,7 +251,7 @@ body.light-theme .story-card {
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* section titles always at the top on their own line */
+/* section titles always at the top */
 .story-section > h2,
 .story-section > h3 {
     display: block;
@@ -279,7 +295,7 @@ body.light-theme .story-card {
 
 .dismiss-btn {
     order: 4;
-    align-self: flex-end;
+    align-self: flex-center;
     background: var(--color-accent);
     color: #fff;
     border: none;
@@ -323,8 +339,7 @@ body.light-theme .story-card {
     text-align: center;
 }
 
-/* 9. Extra-large desktop
-   Screens wider than 1920px in landscape */
+/* 9. Extra-large desktop */
 
 @media (min-width: 1920px) and (orientation: landscape) {
     body {
@@ -351,8 +366,7 @@ body.light-theme .story-card {
     }
 }
 
-/* 10. Tablet layout
-   Up to 1000px (portrait or landscape) */
+/* 10. Tablet layout */
 
 @media (max-width: 1000px) {
     body {
@@ -378,8 +392,7 @@ body.light-theme .story-card {
     }
 }
 
-/* 11. Mobile layout
-   Up to 700px width */
+/* 11. Mobile layout */
 
 @media (max-width: 700px) {
     body {

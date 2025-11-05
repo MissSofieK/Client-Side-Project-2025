@@ -15,163 +15,180 @@
     <!-- Picnic CSS (optional minimalist framework) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
 
-    <!-- Your custom stylesheet (for personal overrides) -->
+    <!-- Your custom stylesheet -->
     <link rel="stylesheet" href="style.css">
-    
 </head>
 <body>
     <header class="site-header">
-        <div class="wrapper header-inner">
-            <div class="header-text">
-                <h1 class="site-title">Safiyya and the Bandwidth Bandits</h1>
-                <p class="site-tagline">
-                    A short story about family, Wi-Fi and one very determined Mum
-                </p>
+        <div class="container">
+            <div class="wrapper header-inner">
+                <div class="header-text">
+                    <h1 class="site-title">Safiyya and the Bandwidth Bandits</h1>
+                    <p class="site-tagline">
+                        A short story about family, Wi-Fi and one very determined Mum
+                    </p>
+
+                    <!-- Flex container for random funny titles -->
+                    <div class="bandit-comments" id="bandit-comments"
+                         aria-label="Random comments to the Bandwidth Bandits">
+                        <!-- Filled dynamically by JavaScript -->
+                    </div>
+                </div>
+
+                <button id="theme-toggle" class="theme-toggle" type="button">
+                    Toggle light / dark
+                </button>
             </div>
-            <button id="theme-toggle" class="theme-toggle" type="button">
-                Toggle light / dark
-            </button>
         </div>
     </header>
 
-    <main class="site-main wrapper">
-        <article class="story-card" aria-labelledby="story-title">
-            <header class="story-header">
-                <h2 id="story-title">Once upon a bandwidth</h2>
-                <p class="story-intro">
-                    My name is Safiyya. I am a Mum, a student of Internet
-                    Technologies, a professional chaos-tamer and part-time
-                    human Wi-Fi extender.
-                </p>
-            </header>
+    <main class="site-main">
+        <div class="container">
+            <div class="wrapper">
+                <article class="story-card" aria-labelledby="story-title">
+                    <header class="story-header">
+                        <h2 id="story-title">Once upon a Bandwidth</h2>
+                        <p class="story-intro">
+                            My name is Safiyya. I am a Mum, a student of Internet
+                            Technologies, a professional chaos-tamer and part-time
+                            human Wi-Fi extender.
+                        </p>
+                    </header>
 
-            <section class="story-section">
-                <h2>The rise of the Bandwidth Bandits</h2>
-                <div class="story-text">
-                    <p>
-                        I live with two certified
-                        <span class="bandits-name">Bandwidth Bandits</span>.
-                        They are not very tall yet, but they have lightning-fast
-                        reflexes, legendary snack detectors and a mysterious
-                        ability to open seventeen tabs at once without blinking.
-                    </p>
-                    <p>
-                        While most kids ask “Are we there yet”, mine ask,
-                        “Mum, if the cloud is up there, why is all my homework
-                        down here.” They negotiate like lawyers, calculate
-                        screen-time like accountants and debug my life choices
-                        faster than any compiler.
-                    </p>
-                </div>
-               <figure class="story-image">
-                    <img src="images/family1.jpg" alt="Family laughter moment placeholder">
-                </figure>
-            </section>
+                    <section class="story-section">
+                        <h2>The rise of the Bandwidth Bandits</h2>
+                        <div class="story-text">
+                            <p>
+                                I live with two certified
+                                <span class="bandits-name">Bandwidth Bandits</span>.
+                                They are not very tall yet, but they have lightning-fast
+                                reflexes, legendary snack detectors and a mysterious
+                                ability to open seventeen tabs at once without blinking.
+                            </p>
+                            <p>
+                                While most kids ask “Are we there yet”, mine ask,
+                                “Mum, if the cloud is up there, why is all my homework
+                                down here.” They negotiate like lawyers, calculate
+                                screen-time like accountants and debug my life choices
+                                faster than any compiler.
+                            </p>
+                        </div>
+                        <figure class="story-image">
+                            <img src="images/family1.jpg" alt="Family laughter moment placeholder">
+                        </figure>
+                    </section>
 
-            <section class="story-section">
-                <h2>The night the Wi-Fi waved a white flag</h2>
-                <div class="story-text">
-                    <p>
-                        One legendary evening, I sat down to work on my
-                        assignment for this very course. I opened my laptop,
-                        whispered a prayer to the Internet gods and took a
-                        heroic sip of coffee. At that exact moment, the
-                        Bandwidth Bandits appeared, clutching the TV remote
-                        like it was a royal scepter.
-                    </p>
-                    <p>
-                        “Mum, can we watch something educational” they asked.
-                        I should have known that “educational” was code for
-                        “cartoons with dangerously catchy theme songs”.
-                        Before I could react, the smart TV connected,
-                        three tablets woke up and my laptop quietly panicked.
-                    </p>
-                    <p>
-                        The Wi-Fi router started blinking in Morse code.
-                        I am fluent in many things, but “help, your children are
-                        streaming the entire universe in HD” is a new language.
-                    </p>
-                </div>
-                <figure class="story-image">
-                    <img src="images/family2.jpg" alt="Evening with Wi-Fi devices placeholder">
-                </figure>
-            </section>
+                    <section class="story-section">
+                        <h2>The night the Wi-Fi waved a white flag</h2>
+                        <div class="story-text">
+                            <p>
+                                One legendary evening, I sat down to work on my
+                                assignment for this very course. I opened my laptop,
+                                whispered a prayer to the Internet gods and took a
+                                heroic sip of coffee. At that exact moment, the
+                                Bandwidth Bandits appeared, clutching the TV remote
+                                like it was a royal scepter.
+                            </p>
+                            <p>
+                                “Mum, can we watch something educational” they asked.
+                                I should have known that “educational” was code for
+                                “cartoons with dangerously catchy theme songs”.
+                                Before I could react, the smart TV connected,
+                                three tablets woke up and my laptop quietly panicked.
+                            </p>
+                            <p>
+                                The Wi-Fi router started blinking in Morse code.
+                                I am fluent in many things, but “help, your children are
+                                streaming the entire universe in HD” is a new language.
+                            </p>
+                        </div>
+                        <figure class="story-image">
+                            <img src="images/family2.jpg" alt="Evening with Wi-Fi devices placeholder">
+                        </figure>
+                    </section>
 
-            <section class="story-section">
-                <h2>The great household bandwidth treaty</h2>
-                <div class="story-text">
-                    <p>
-                        The Internet slowed down so much that even my thoughts
-                        were buffering. My assignment page loaded one div per
-                        decade. Google looked at me like, “I am trying my best,
-                        but your children are watching videos about baby goats
-                        and asking me how tall a giraffe would be if it wore
-                        high heels.”
-                    </p>
-                    <p>
-                        That was when the project manager in me woke up.
-                        I did what every responsible mother and network
-                        administrator would do. I called a family meeting.
-                    </p>
-                    <p>
-                        Together we designed our first official Household
-                        Bandwidth Treaty. One episode for them, twenty focused
-                        minutes for me. No secret streaming, no background
-                        downloads, and absolutely no “I accidentally clicked
-                        play on the entire series.”
-                    </p>
-                    <p>
-                        Somehow, it worked. The router stopped crying.
-                        My laptop finally loaded this story.
-                        And my girls discovered that Mum can code and still
-                        laugh, even when the Wi-Fi icon looks like it is on its
-                        last pixel.
-                    </p>
-                </div>
-                <figure class="story-image">
-                    <img src="images/family3.jpg" alt="Family meeting placeholder">
-                </figure>
-            </section>
+                    <section class="story-section">
+                        <h2>The great household bandwidth treaty</h2>
+                        <div class="story-text">
+                            <p>
+                                The Internet slowed down so much that even my thoughts
+                                were buffering. My assignment page loaded one div per
+                                decade. Google looked at me like, “I am trying my best,
+                                but your children are watching videos about baby goats
+                                and asking me how tall a giraffe would be if it wore
+                                high heels.”
+                            </p>
+                            <p>
+                                That was when the project manager in me woke up.
+                                I did what every responsible mother and network
+                                administrator would do. I called a family meeting.
+                            </p>
+                            <p>
+                                Together we designed our first official Household
+                                Bandwidth Treaty. One episode for them, twenty focused
+                                minutes for me. No secret streaming, no background
+                                downloads, and absolutely no “I accidentally clicked
+                                play on the entire series.”
+                            </p>
+                            <p>
+                                Somehow, it worked. The router stopped crying.
+                                My laptop finally loaded this story.
+                                And my girls discovered that Mum can code and still
+                                laugh, even when the Wi-Fi icon looks like it is on its
+                                last pixel.
+                            </p>
+                        </div>
+                        <figure class="story-image">
+                            <img src="images/family3.jpg" alt="Family meeting placeholder">
+                        </figure>
+                    </section>
 
-            <section class="story-section story-ending">
-                <h2>Happily ever after, with better signal</h2>
-                <div class="story-text">
-                    <p>
-                        So here I am, turning chaos into HTML and our family
-                        story into a web page. I am still studying, still
-                        parenting and still debugging life, but I would not
-                        trade my two Bandwidth Bandits for the fastest fiber in
-                        the world.
-                    </p>
-                    <p>
-                        In the end, the real Internet Technology is simple
-                        it is the invisible connection that holds us together,
-                        even when the Wi-Fi goes down and everyone suddenly
-                        remembers that board games exist.
-                    </p>
-                    <p class="story-signoff">
-                        And if this page loaded smoothly for you,
-                        that means the Household Bandwidth Treaty is still
-                        working. For now.
-                    </p>
-                </div>
-                <figure class="story-image">
-                    <img src="images/family4.jpg" alt="Fourth family moment placeholder">
-                </figure>
-            </section>
-        </article>
+                    <section class="story-section story-ending">
+                        <h2>Happily ever after, with better signal</h2>
+                        <div class="story-text">
+                            <p>
+                                So here I am, turning chaos into HTML and our family
+                                story into a web page. I am still studying, still
+                                parenting and still debugging life, but I would not
+                                trade my two Bandwidth Bandits for the fastest fiber in
+                                the world.
+                            </p>
+                            <p>
+                                In the end, the real Internet Technology is simple
+                                it is the invisible connection that holds us together,
+                                even when the Wi-Fi goes down and everyone suddenly
+                                remembers that board games exist.
+                            </p>
+                            
+                        </div>
+
+                        <!-- 4th image -->
+                        <figure class="story-image">
+                            <img src="images/family4.jpg" alt="Fourth family moment placeholder">
+                        </figure>
+                    </section>
+                     <p class="story-signoff">
+                                And if this page loaded smoothly for you,
+                                that means the Household Bandwidth Treaty is still
+                                working. For now.
+                            </p>
+                </article>
+            </div>
+        </div>
     </main>
 
     <footer class="site-footer">
-        <div class="wrapper footer-inner">
-            <p>
-                Story coded with love by Safiyya
-                for Internet Technologies – Client Side.
-            </p>
+        <div class="container">
+            <div class="wrapper footer-inner">
+                <p>
+                    Story coded with love by Safiyya
+                    for Internet Technologies – Client Side.
+                </p>
+            </div>
         </div>
     </footer>
 
+    <!-- Your local JS -->
     <script src="index.js"></script>
 </body>
 </html>
-
