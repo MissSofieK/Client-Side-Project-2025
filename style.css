@@ -201,7 +201,7 @@ body.light-theme .story-card {
    Title = order 1
    Paragraph block = order 2
    Image = order 3
-   Dismiss button = order 4 */
+   Dismiss button (added by JS) = order 4 */
 
 .story-section {
     display: flex;
