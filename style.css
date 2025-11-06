@@ -3,10 +3,10 @@
 :root {
     --color-bg: #050816;
     --color-surface: #101827;
-    --color-accent: #f97316;
+    --color-accent: #fc6a1c;
     --color-accent-soft: rgba(249, 115, 22, 0.1);
     --color-text-main: #f9fafb;
-    --color-text-muted: #9ca3af;
+    --color-text-muted: #9ca1a9;
 
     --font-main: system-ui, -apple-system, BlinkMacSystemFont,
                  "Segoe UI", sans-serif;
@@ -25,6 +25,7 @@ body.light-theme {
     --color-surface: #ffffff;
     --color-text-main: #111827;
     --color-text-muted: #4b5563;
+    --color-accent-soft: rgba(251, 146, 60, 0.1);
 }
 
 /* Reset & box model */
@@ -94,23 +95,78 @@ body.light-theme {
 
 .header-inner {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
+    justify-content: center;   /* center the whole header content */
 }
 
 .header-text {
     flex: 1 1 auto;
+    text-align: center;        /* center H1, tagline, etc. */
 }
+
 
 .site-title {
     font-family: var(--font-heading);
     font-size: clamp(2.2rem, 3vw, 2.8rem);
     letter-spacing: 0.02em;
+    margin-bottom: 0.5rem;
+}
+
+.header-buttons {
+    margin-top: 0.75rem;
+    display: flex;
+    justify-content: space-between; /* one left, one right */
+    align-items: center;
+    gap: 1rem;
+    max-width: 420px;               /* controls how wide the row is */
+    margin-inline: auto;            /* center the button row under the tagline */
+}
+
+/* New restore button style */
+.restore-btn {
+    margin: 0.25rem auto 0.5rem;
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    background: rgba(15, 23, 42, 0.9);
+    color: var(--color-text-main);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.restore-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+    background: #172554;
+}
+
+/* ... later ... */
+
+.restore-btn {
+    padding: 0.6rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    background: rgba(15, 23, 42, 0.9);
+    color: var(--color-text-main);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.restore-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+    background: #172554;
+}
+
+body.light-theme .restore-btn {
+    background: #e5e7eb;
+    color: #111827;
 }
 
 .site-tagline {
-    margin-top: 0.75rem;
+    margin-top: 0.4rem;
     color: var(--color-text-muted);
     font-size: 1rem;
 }
@@ -136,8 +192,7 @@ body.light-theme .bandit-comment {
 }
 
 .theme-toggle {
-    flex: 0 0 auto;
-    padding: 0.6rem 1.1rem;
+   padding: 0.6rem 1.1rem;
     border-radius: 999px;
     border: 1px solid rgba(148, 163, 184, 0.6);
     background: rgba(15, 23, 42, 0.9);
@@ -156,6 +211,23 @@ body.light-theme .theme-toggle {
     transform: translateY(-1px);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
 }
+
+.restore-btn {
+    padding: 0.6rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    background: rgba(15, 23, 42, 0.9);
+    color: var(--color-text-main);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.restore-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
 
 .site-main {
     padding: 1rem 0 4rem;
@@ -223,11 +295,12 @@ body.light-theme .story-card {
 
 .story-header {
     margin-bottom: 2rem;
+    text-align: center; /* center main story h2 and intro */
 }
 
 .story-header h2 {
     font-family: var(--font-heading);
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     margin-bottom: 0.35rem;
 }
 
@@ -235,7 +308,7 @@ body.light-theme .story-card {
     color: var(--color-text-muted);
     font-size: 1rem;
     max-width: 90%;
-    margin: 0 auto;
+    margin: 0.5rem auto 0;
 }
 
 /* 5. Flex sections and order */
@@ -251,17 +324,17 @@ body.light-theme .story-card {
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* section titles always at the top */
+/* section titles always at the top, centered */
 .story-section > h2,
 .story-section > h3 {
     display: block;
     width: 100%;
     order: 0;
-    align-self: flex-start;
     margin-bottom: 0.5rem;
     font-family: var(--font-heading);
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: var(--color-accent);
+    text-align: center;
 }
 
 .story-text {
@@ -295,7 +368,7 @@ body.light-theme .story-card {
 
 .dismiss-btn {
     order: 4;
-    align-self: flex-center;
+    align-self: center; /* center the button */
     background: var(--color-accent);
     color: #fff;
     border: none;
@@ -310,6 +383,21 @@ body.light-theme .story-card {
 .dismiss-btn:hover {
     background: #fb923c;
     transform: translateY(-1px);
+}
+
+/* Hidden state for dismissed sections */
+.hidden-section {
+    display: none;
+}
+
+/* Section sign-off */
+.section-signoff {
+    order: 5;
+    margin-top: 1rem;
+    font-style: italic;
+    font-size: 0.8rem;
+    color: #ffffff;
+    text-align: center;
 }
 
 /* Smooth fade-out when section is being removed */
@@ -335,23 +423,14 @@ body.light-theme .story-card {
 .story-signoff {
     margin-top: 1rem;
     font-style: italic;
+    color: var(--color-text-muted);
     text-align: center;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-/* Theme-specific colors for the signoff text */
-
-/* Dark mode (default) */
-body:not(.light-theme) .story-signoff {
-    color: #e5e7eb; /* light gray on dark background */
-}
-
-/* Light mode */
+/* Light theme override for readability */
 body.light-theme .story-signoff {
-    color: #374151; /* dark gray, readable on light background */
-}
-
-.story-card p {
-    color: #fff;
+    color: #374151; /* dark gray, good contrast on light backgrounds */
 }
 
 
@@ -391,12 +470,12 @@ body.light-theme .story-signoff {
 
     .header-inner {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 1rem;
     }
 
     .theme-toggle {
-        align-self: flex-start;
+        align-self: center;
     }
 
     .story-card {
@@ -434,4 +513,54 @@ body.light-theme .story-signoff {
     .story-image img {
         max-width: 100%;
     }
+}
+
+/* 12. Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+/* 13. Print styles */
+@media print {
+    body {
+        background: #fff;
+        color: #000;
+        padding: 0;
+        font-size: 12pt;
+    }
+
+    .story-card {
+        box-shadow: none;
+        border: none;
+        background: #fff;
+        padding: 0;
+    }
+
+    .story-image img {
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .theme-toggle,
+    .dismiss-btn,
+    .restore-btn {
+        display: none;
+    }
+}
+
+/* 14. Header Buttons */
+@media (max-width: 600px) {
+    .header-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+.header-buttons button {
+    flex: 1 1 auto;
 }
