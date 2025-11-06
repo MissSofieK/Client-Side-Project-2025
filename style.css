@@ -7,7 +7,6 @@
     --color-accent-soft: rgba(249, 115, 22, 0.1);
     --color-text-main: #f9fafb;
     --color-text-muted: #9ca1a9;
-    --color-text-restore-button: #ffffff;
 
     --font-main: system-ui, -apple-system, BlinkMacSystemFont,
                  "Segoe UI", sans-serif;
@@ -26,7 +25,7 @@ body.light-theme {
     --color-surface: #ffffff;
     --color-text-main: #111827;
     --color-text-muted: #4b5563;
-    --color-text-restore-button: #ffffff;
+    --color-accent-soft: rgba(251, 146, 60, 0.1);
 }
 
 /* Reset & box model */
@@ -142,6 +141,30 @@ body.light-theme {
     background: #172554;
 }
 
+/* ... later ... */
+
+.restore-btn {
+    padding: 0.6rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    background: rgba(15, 23, 42, 0.9);
+    color: var(--color-text-main);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.restore-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+    background: #172554;
+}
+
+body.light-theme .restore-btn {
+    background: #e5e7eb;
+    color: #111827;
+}
+
 .site-tagline {
     margin-top: 0.4rem;
     color: var(--color-text-muted);
@@ -149,7 +172,7 @@ body.light-theme {
 }
 
 .theme-toggle {
-    padding: 0.6rem 1.1rem;
+   padding: 0.6rem 1.1rem;
     border-radius: 999px;
     border: 1px solid rgba(148, 163, 184, 0.6);
     background: rgba(15, 23, 42, 0.9);
