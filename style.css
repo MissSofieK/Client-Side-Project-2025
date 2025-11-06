@@ -16,7 +16,7 @@
     --radius-img: 1rem;
     --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.45);
 
-    --content-width: 960px;
+    --content-width: 800px; /* narrower story column */
 }
 
 /* Light theme overrides */
@@ -59,10 +59,31 @@ body.light-theme {
     background: var(--color-bg);
 }
 
+/* Wrapper = main column width controller */
 .wrapper {
     max-width: var(--content-width);
     margin: 0 auto;
-    padding-inline: 2.5rem;
+    padding-inline: 1.5rem;
+}
+
+/* Slightly adjust wrapper at different widths */
+@media (min-width: 1600px) {
+    :root {
+        --content-width: 700px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .wrapper {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 700px) {
+    .wrapper {
+        max-width: 95%;
+        padding-inline: 1rem;
+    }
 }
 
 /* Header and footer */
@@ -201,7 +222,7 @@ body.light-theme .story-card {
    Title = order 1
    Paragraph block = order 2
    Image = order 3
-   Dismiss button = order 4 */
+   Dismiss button (added by JS) = order 4 */
 
 .story-section {
     display: flex;
@@ -306,10 +327,6 @@ body.light-theme .story-card {
    Screens wider than 1920px in landscape */
 
 @media (min-width: 1920px) and (orientation: landscape) {
-    :root {
-        --content-width: 1200px;
-    }
-
     body {
         padding: 4rem 0;
         font-size: 1.02rem;
@@ -342,10 +359,6 @@ body.light-theme .story-card {
         padding: 2.25rem 0;
     }
 
-    .wrapper {
-        padding-inline: 1.75rem;
-    }
-
     .header-inner {
         flex-direction: column;
         align-items: flex-start;
@@ -371,10 +384,6 @@ body.light-theme .story-card {
 @media (max-width: 700px) {
     body {
         padding: 1.5rem 0;
-    }
-
-    .wrapper {
-        padding-inline: 1.25rem;
     }
 
     .site-header {
