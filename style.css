@@ -390,6 +390,16 @@ body.light-theme .story-card {
     display: none;
 }
 
+/* Section sign-off */
+.section-signoff {
+    order: 5;
+    margin-top: 1rem;
+    font-style: italic;
+    font-size: 0.8rem;
+    color: #ffffff;
+    text-align: center;
+}
+
 /* Smooth fade-out when section is being removed */
 .story-section.fade-out {
     opacity: 0;
@@ -415,7 +425,14 @@ body.light-theme .story-card {
     font-style: italic;
     color: var(--color-text-muted);
     text-align: center;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
+
+/* Light theme override for readability */
+body.light-theme .story-signoff {
+    color: #374151; /* dark gray, good contrast on light backgrounds */
+}
+
 
 /* 9. Extra-large desktop */
 
