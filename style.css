@@ -171,6 +171,26 @@ body.light-theme .restore-btn {
     font-size: 1rem;
 }
 
+/* Flex container for random funny comments */
+.bandit-comments {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.bandit-comment {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    background: rgba(15, 23, 42, 0.7);
+}
+
+body.light-theme .bandit-comment {
+    background: rgba(209, 213, 219, 0.8);
+}
+
 .theme-toggle {
    padding: 0.6rem 1.1rem;
     border-radius: 999px;
