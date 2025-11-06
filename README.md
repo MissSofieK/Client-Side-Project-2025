@@ -8,4 +8,6 @@ Romans 8:28
 
 Thanks for a splendid journey, nevertheless, Bro! :)
 
+file:///C:/Users/DefUser/OneDrive%20-%20CZU%20v%20Praze/Semester%203/Internet%20Technologies%20-%20Client%20Side/Project/Client-Side-Project-2025/Client-Side-Project-2025/index.html
 
+https://www.linkedin.com/in/mssofiek/
